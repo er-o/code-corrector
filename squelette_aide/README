@@ -1,0 +1,19 @@
+L'archive tar, accessible ici, contient les fichier
+
+    hamming.c
+    myerror.c, myerror.h
+    black.c
+    transmit.c
+    Makefile
+
+Les détail de l'encodage sont fixés par le code dans hamming.c.
+
+Le fichier hamming.c contient l'encodeur. Il contient aussi du code que l'on peut utiliser comme exemple pour l'ouverture, la lecture et l'écriture dans un fichier. Par ailleurs, il montre aussi comment on peut gérer la ligne de commande.
+
+Les fichiers myerror.c, myerror.h contiennent des prototypes et de routines de gestion d'erreurs.
+
+Le fichier black.c produit un fichier de données blanc ou noir. On peut regarder
+
+Le fichier transmit.c contient le bruiteur. On peut observer le travail du bruiteur en faisant par exemple ./black -s 100 | ./transmit -p 0.1 | hexdump.
+
+Makefile contient la description pour make. La commande make produit les exécutables hamming, black et transmit. Avec l'option -h tous ces exécutable montrent leurs paramètres.
