@@ -1,0 +1,36 @@
+1. Se familiariser avec les outils mathématiques utilisés dans la théorie des codes correcteurs :
+
+Partie élémentaire :
+
+	6.1 : explique importance de détecter et corriger les erreurs
+		- associer un mot à chaque lettre
+		- bit de parité
+		- répéter le message (erreur => eeerrrrrreeeuuurrr)
+Le son et la musique ont besoin de ça.
+
+	6.2 : Le corps F2
+Un corps est une ensemble de nombres sur lequel sont définis des opérations.
+Ensuite ça parle de distributivité, d'inverse additif…
+	F2 signifie qu'on est dans un ensemble binaire.
+
+	6.3 Le code de Hamming
+On prends un code hamming C(7,4)
+	=> on envoie 7 bits : 4 premiers bits contiennent le message, et 3 pour vérifier les erreurs
+Les 3 derniers bits correspondent à des additions entre les 3 premiers bits.
+Donc il suffit de refaire les additions à l'arrivée, de corriger l'erreur, et de décoder.
+
+	6.4 Les codes de hamming
+On prends les codes C(2^k -1, 2^k – k – 1) avec C(7,4) pour k=3.
+
+Les codes linéaires utilisent 2 matrices :
+	- la matrice génératrice (G) qui va encoder le message
+	- la matrice de contrôle (H) qui va permettre de détecter une erreur, et de trouver sa position.
+		=> crée à partir de G
+
+Pour détecter une erreur :
+	- une multiplication matricielle entre un message sans erreur et G donnera 0.
+
+Pour corriger l'erreur :
+	-  une multiplication matricielle entre un message avec 1 erreur et G donnera une matrice avec un bit 1 à la position du bit erroné.
+
+Partie avancée :
