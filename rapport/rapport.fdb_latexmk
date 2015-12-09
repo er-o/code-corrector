@@ -1,5 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1449660549 "rapport.tex" "rapport.pdf" "rapport" 1449660567
+["pdflatex"] 1449661961 "rapport.tex" "rapport.pdf" "rapport" 1449661962
+  "./logo.jpg" 1449661606 16572 34dcb59fc45e0a39e6d3d44eedbed5d6 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1441055618 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1441055616 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1441055616 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -19,7 +20,6 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1441055616 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1441055616 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1441055616 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1441055616 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1441055619 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1441055619 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1441055619 32001 6aeea3afe875097b1eb0da29acd61e28 ""
@@ -31,7 +31,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1441055619 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1441055619 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1441055619 36118 fad905eba93cff5bce1e185fe980a177 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1441055619 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii" 1441055624 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/babel-english/english.ldf" 1441055622 6963 2e0cb3d93aa64508bdb0db58ae900d97 ""
   "/usr/share/texmf-dist/tex/generic/babel/babel.def" 1441055622 49725 b40154b767b0073ee42b35911042b793 ""
@@ -131,6 +130,7 @@
   "/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1441055621 325 2bcd023400636339210573e2b3ee298b ""
   "/usr/share/texmf-dist/tex/latex/todonotes/todonotes.sty" 1441056894 17377 bc5c9601d3769048725a727e7d6d7195 ""
   "/usr/share/texmf-dist/tex/latex/tools/calc.sty" 1441055621 10214 78c09985255ed93018b1db2c4e2f6deb ""
+  "/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def" 1441056894 7784 086a50b784a20762a031889b73f97126 ""
   "/usr/share/texmf-dist/tex/latex/ucs/data/uni-global.def" 1441056894 1375 8a855db83af5d6753ccbbd32e6a8a901 ""
   "/usr/share/texmf-dist/tex/latex/ucs/ucs.sty" 1441056894 27982 5723d81d568db410592a59b85fb3eaae ""
   "/usr/share/texmf-dist/tex/latex/ucs/ucsencs.def" 1441056894 22368 c53c9d0d16c65bef2b157515c9d9f658 ""
@@ -140,11 +140,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1441055625 31669 df537245012f3e5f05bdc55644b7a3df ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1449659699 1634688 431e3db3d0eb4c92c879d276686b5169 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1449659637 7209435 495df88911ed99fa633b5dbe1ae18bef ""
-  "frog.jpg" 0 -1 0 ""
-  "logo.png" 0 -1 0 ""
-  "rapport.aux" 1449660549 1454 f230813ad6989c1db38850077e179ec9 ""
-  "rapport.tex" 1449660502 6154 a2a9114cb73f3d346e126eab2a1fd909 ""
+  "logo.jpg" 1449661606 16572 34dcb59fc45e0a39e6d3d44eedbed5d6 ""
+  "rapport.aux" 1449661962 1454 3e8ea579b2df0d31386ba92a30d0baf9 ""
+  "rapport.tex" 1449661961 6228 f6fedc979d62dbf2de1edab2086f01f2 ""
   (generated)
-  "rapport.pdf"
-  "rapport.aux"
   "rapport.log"
+  "rapport.aux"
+  "rapport.pdf"
