@@ -55,24 +55,23 @@ void string_of_byte(char s[], const char c) {
 
 
 void syndrom(){
-  synd[0] = "0000";
-  synd[1] = "0001";
-  synd[2] = "0010";
-  synd[3] = "0011";
-  synd[4] = "0100";
-  synd[5] = "0101";
-  synd[6] = "0110";
-  synd[7] = "0111";
-  synd[8] = "1000";
-  synd[9] = "1001";
-  synd[10] = "1010";
-  synd[11] = "1011";
-  synd[12] = "1100";
-  synd[13] = "1101";
-  synd[14] = "1110";
-  synd[15] = "1111";
+  int leader[8][8] = {{1,0,0,0,0,0,0,0},
+  {0,1,0,0,0,0,0,0},
+  {0,0,1,0,0,0,0,0},
+  {0,0,0,1,0,0,0,0},
+  {0,0,0,0,1,0,0,0},
+  {0,0,0,0,0,1,0,0},
+  {0,0,0,0,0,0,1,0},
+  {0,0,0,0,0,0,0,1}};
 
-
+  int tmp[3];
+for(int k = 0; k < 8; k++)
+  for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 7; j++){
+      tmp[i] ^= leader[k][j] ^ GMatrixControl[j][i];
+    }
+    printf("%s\n", tmp[i]);
+  }
 /*
   char out[2] ;
   char buff[3][10] ;
