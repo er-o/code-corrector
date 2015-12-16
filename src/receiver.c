@@ -16,6 +16,18 @@ int GMatrix[4][8] = {{1,1,0,1,1,0,0,0},
 int GMatrixControl[7][3];
 char* synd[8];
 
+int bin_to_int(char bin[]){
+  int somme = 0;
+  int len = strlen(bin);
+  for (int i = len-1; i >= 0; i--) {
+    if(bin[i] == 49) {
+      somme |= (1<<(len -i-1));
+    }
+  }
+  return somme;
+}
+
+
 void to_control(){
   for (int i=0; i < 3; ++i) {
     for (int j=0; j < 4; ++j)
@@ -102,14 +114,30 @@ void to_print_Control() {
 
 
 int main() {
-
+/*
   to_control();
   to_print_Matrix();
   printf("\n\n\n");
   to_print_Control();
   printf("\n\n\n");
   syndrom();
+*/
 
+printf("binnaire : %s\n", "110");
+
+printf("int : %d\n", bin_to_int("110"));
+printf("binnaire : %s\n", "111");
+
+printf("int : %d\n", bin_to_int("111"));
+printf("binnaire : %s\n", "001");
+
+printf("int : %d\n", bin_to_int("001"));
+printf("binnaire : %s\n", "11011");
+
+printf("int : %d\n", bin_to_int("11011"));
+printf("binnaire : %s\n", "00000000");
+
+printf("int : %d\n", bin_to_int("00000000"));
 
 
 }
