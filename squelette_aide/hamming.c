@@ -49,7 +49,7 @@ void hamming(char c, char out[2]) {
 void print_test(char in) {
   char out[2] ;
   char buff[3][10] ;
-  
+
   hamming(in,out);
   string_of_byte(buff[0], in);
   string_of_byte(buff[1], out[0]);
@@ -63,7 +63,7 @@ void hamming_stream(int fin, int fdout) {
   int n ;
 
   while ((n = read(fin, buffin, BUFFSIZE)) > 0) {
-    for (int i=0; i < n; ++i) 
+    for (int i=0; i < n; ++i)
       hamming(buffin[i], buffout + 2*i) ;
     if (write(fdout, buffout, 2*n) < 0)
       err_sys("hamming : output failure");
@@ -111,7 +111,7 @@ int main(int argc, char* argv[]) {
       if (pt == optarg)
         err_quit("black : %s not a integer", optarg);
       in = (char) (abs(n) % 256) ;
-      print_test(in) ; 
+      print_test(in) ;
       return EXIT_SUCCESS;
       break ;
     default :
@@ -123,7 +123,3 @@ int main(int argc, char* argv[]) {
   close(fdout);
   return EXIT_SUCCESS ;
 }
-  
- 
-
-  
