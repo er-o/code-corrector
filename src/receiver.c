@@ -55,22 +55,23 @@ void string_of_byte(char s[], const char c) {
 
 
 void syndrom(){
-  int leader[8][8] = {
-  {0,0,0,0,0,0,0,1},
-  {0,0,0,0,0,0,1,0},
-  {0,0,0,0,0,1,0,0},
-  {0,0,0,0,1,0,0,0},
-  {0,0,0,1,0,0,0,0},
-  {0,0,1,0,0,0,0,0},
-  {0,1,0,0,0,0,0,0},
-  {1,0,0,0,0,0,0,0}};
+  int leader[7][7] = {
+  {0,0,0,0,0,0,1},
+  {0,0,0,0,0,1,0},
+  {0,0,0,0,1,0,0},
+  {0,0,0,1,0,0,0},
+  {0,0,1,0,0,0,0},
+  {0,1,0,0,0,0,0},
+  {1,0,0,0,0,0,0}};
 
   int tmp[3] = {0,0,0};
   int index;
   for(int k = 0; k < 8; k++){
+    printf("===============\n");
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 7; j++){
         tmp[i] ^= leader[k][j] ^ GMatrixControl[j][i];
+        printf("tmp : %d, leader : %d, GMatrixControl : %d\n", tmp[i], leader[k][j], GMatrixControl[j][i]);
       }
     }
     index = tmp[0] + 2*tmp[1] + 4*tmp[2];
