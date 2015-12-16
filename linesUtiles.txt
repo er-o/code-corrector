@@ -1,0 +1,5 @@
+Cours sur les correcteurs d'erreurs :
+http://www-public.tem-tsp.eu/~uro/cours-web/detection-code.htm
+
+Image syndrome Hamming(7,4)
+http://cs.nju.edu.cn/yangxc/dcc_teach/adsl-pass/5-2.htm
