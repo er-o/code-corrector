@@ -13,18 +13,18 @@ int GMatrix[4][8] = {{1,1,0,1,1,0,0,0},
                      {1,1,1,0,0,0,0,1}} ;
 
 
-int GMatrixControl[8][4];
+int GMatrixControl[7][3];
 char* synd[16];
 
 void to_control(){
-  for (int i=0; i < 4; ++i) {
+  for (int i=0; i < 3; ++i) {
     for (int j=0; j < 4; ++j)
       GMatrixControl[j][i] = GMatrix[i][j];
-    for (int k = 4; k < 8; k++)
+    for (int k = 4; k < 7; k++)
       GMatrixControl[k][i] = GMatrix[i][k];
   }
 }
-
+/*
 void hamming(char c, char out[2]) {
   out[0] = out[1] = 0;
   for (int i=0; i < 4; ++i) {
@@ -33,7 +33,7 @@ void hamming(char c, char out[2]) {
     if (c & (1 << (i+4)))
       out[0] ^= GMatrix[i] ;
   }
-}
+}*/
 
 void string_of_byte(char s[], const char c) {
   for (int i = 0 ; i < 8; ++i)
@@ -61,7 +61,7 @@ void syndrom(){
   synd[15] = "1111";
 
 
-
+/*
   char out[2] ;
   char buff[3][10] ;
 
@@ -74,7 +74,7 @@ void syndrom(){
     synd[i] = buff[1] + buff[2]
     printf("in = %s out = %s\n", buff[0], synd[i]) ;
 
-  }
+  }*/
 }
 
 
@@ -92,8 +92,8 @@ void to_print_Matrix() {
 
 void to_print_Control() {
   printf("matrice de controle\n");
-  for(int i = 0; i < 8; i++) {
-    for (int j = 0; j < 4; j++) {
+  for(int i = 0; i < 7; i++) {
+    for (int j = 0; j < 3; j++) {
       printf (" %d ", GMatrixControl[i][j]);
     }
     printf("\n");
