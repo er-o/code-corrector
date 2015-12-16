@@ -64,13 +64,14 @@ void syndrom(){
   {0,0,0,0,0,0,1,0},
   {0,0,0,0,0,0,0,1}};
 
-  int tmp[3];
+  int tmp[3] = {0,0,0};
+
 for(int k = 0; k < 8; k++)
   for(int i = 0; i < 3; i++){
     for(int j = 0; j < 7; j++){
       tmp[i] ^= leader[k][j] ^ GMatrixControl[j][i];
     }
-    printf("%s\n", tmp[i]);
+    printf("%d\n", tmp[i]);
   }
 /*
   char out[2] ;
@@ -118,25 +119,10 @@ int main() {
   to_print_Matrix();
   printf("\n\n\n");
   to_print_Control();
-  printf("\n\n\n");
+  printf("\n\n\n");*/
   syndrom();
-*/
 
-printf("binnaire : %s\n", "110");
 
-printf("int : %d\n", bin_to_int("110"));
-printf("binnaire : %s\n", "111");
-
-printf("int : %d\n", bin_to_int("111"));
-printf("binnaire : %s\n", "001");
-
-printf("int : %d\n", bin_to_int("001"));
-printf("binnaire : %s\n", "11011");
-
-printf("int : %d\n", bin_to_int("11011"));
-printf("binnaire : %s\n", "00000000");
-
-printf("int : %d\n", bin_to_int("00000000"));
 
 
 }
