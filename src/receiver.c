@@ -14,7 +14,7 @@ int GMatrix[4][8] = {{1,1,0,1,1,0,0,0},
 
 
 int GMatrixControl[7][3];
-char* synd[16];
+char* synd[8];
 
 void to_control(){
   for (int i=0; i < 3; ++i) {
