@@ -55,7 +55,8 @@ void string_of_byte(char s[], const char c) {
 
 
 void syndrom(){
-  int leader[8][8] = {{0,0,0,0,0,0,0,1},
+  int leader[8][8] = {
+  {0,0,0,0,0,0,0,1},
   {0,0,0,0,0,0,1,0},
   {0,0,0,0,0,1,0,0},
   {0,0,0,0,1,0,0,0},
@@ -78,7 +79,7 @@ void syndrom(){
 
   printf("matrice génératrice\n");
   for(int i = 0; i < 8; i++) {
-    printf ("index : %d    bit erreur : %d", i, synd[i]);
+    printf ("index : %d    bit erreur : %d\n", i, synd[i]);
   }
   printf("\n");
 }
@@ -98,7 +99,7 @@ synd[i] = buff[1] + buff[2]
 printf("in = %s out = %s\n", buff[0], synd[i]) ;
 
 }*/
-}
+
 
 
 
@@ -125,12 +126,12 @@ void to_print_Control() {
 
 
 int main() {
-  /*
+
   to_control();
   to_print_Matrix();
   printf("\n\n\n");
   to_print_Control();
-  printf("\n\n\n");*/
+  printf("\n\n\n");
   syndrom();
 
 
