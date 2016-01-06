@@ -4,6 +4,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include "myerror.h"
+#include <getopt.h>
 
 #define BUFFSIZE 1024
 

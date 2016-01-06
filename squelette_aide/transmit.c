@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "myerror.h"
+#include <getopt.h>
 
 #define PGN  "trans"
 #define BUFFSIZE 1024
@@ -11,7 +12,7 @@
 #ifndef RAND_MAX
 long max = (1 << 31) - 1;
 #else
-  long max = RAND_MAX ;  
+  long max = RAND_MAX ;
 #endif
 
 long _np ;
@@ -35,7 +36,7 @@ void bruit_bytes(char* s, const size_t n) {
 char io_buff[BUFFSIZE] ;
 void transmit(int fdin, int fdout) {
   int n;
-  
+
   while ((n = read(fdin, io_buff, BUFFSIZE)) > 0) {
     bruit_bytes(io_buff, n) ;
     if (write(fdout, io_buff, n) < 0)
@@ -57,9 +58,9 @@ char help[]  =  "transmit -p <prob> [-i infile] [-o outfile]\n\n"
 int main(int argc, char*  argv[]) {
   int fdin  = STDIN_FILENO;
   int fdout = STDOUT_FILENO ;
-  double p  = 0.5 ;
+  double p  = 0.02 ;
   char* pt, ch ;
-  
+
   while ((ch = getopt(argc, argv, "hi:o:p:")) != -1) {
     switch (ch) {
     case 'h' :
