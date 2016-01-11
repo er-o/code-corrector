@@ -32,8 +32,9 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[12pt]{article}
-\usepackage[francais]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -100,21 +101,20 @@ Modélisation Mathémathique % Supervisor's Name
 
 %----------------------------------------------------------------------------------------
 
-\vfill % Fill the rest of the page with whitespace
+\newpage % Fill the rest of the page with whitespace
 
 \end{titlepage}
 
 %----------------------------------------------------------------------------------------
 %   TABLE OF CONTENTS
 %----------------------------------------------------------------------------------------
-\newpage
+\renewcommand{\contentsname}{Sommaire}
 \tableofcontents
-
-%----------------------------------------------------------------------------------------
-%   CONTENTS
-%----------------------------------------------------------------------------------------
 \newpage
 
+%----------------------------------------------------------------------------------------
+%   INTRODUCTION
+%----------------------------------------------------------------------------------------
 \section{Introduction}
 \label{sec:introduction}
 
@@ -122,7 +122,9 @@ Ce projet à été réalisé dans le cadre de la formation en Modélisation Math
 
 Il consiste a concevoir un programme permettant l'encodage d'un message binaire, puis par différentes methode que nous expliciterons plus tard, de le décoder et de corriger les possibles erreurs de transmission.
 
-
+%----------------------------------------------------------------------------------------
+%   CONTENTS
+%----------------------------------------------------------------------------------------
 
 \section{La théorie}
 \label{sec:theorie}
@@ -135,10 +137,10 @@ Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer u
 
 \hspace{1cm} exemple : erreur $\rightarrow$ Echo Romeo Romeo Echo Uniforme Romeo
 \\
-\\En informatique on utilise ce qu'on appel des ``bits de parité" qui indique indique si le nombre de 1 dans l'octet est pair ou non
+\\ En informatique on utilise ce qu'on appel des ``bits de parité" qui indique indique si le nombre de 1 dans l'octet est pair ou non
 
 \hspace{1cm} exemple : A $\rightarrow$ 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant ``01000001".
-\\Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié simplement en regardant si le bit de parité correspond toujours au reste du message. Par exemple si l'on reçoit
+\\ Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié simplement en regardant si le bit de parité correspond toujours au reste du message.
 
 \subsection{Le code de Hamming}
 
@@ -204,5 +206,13 @@ You can make lists with automatic numbering \dots
 \end{itemize}
 
 We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
+
+%----------------------------------------------------------------------------------------
+%   ANNEXES SECTIONS
+%----------------------------------------------------------------------------------------
+\appendix
+\section{Annexe 1}
+\label{sec:Annexe 1}
+
 
 \end{document}

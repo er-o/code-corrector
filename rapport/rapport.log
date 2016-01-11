@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.9)  11 JAN 2016 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.9)  11 JAN 2016 16:30
 entering extended mode
 **"C:/Users/Brewal/Desktop/Cours/2eme année/Modélisations Mathématiques II/code-corrector/rapport/rapport.tex"
 ("C:/Users/Brewal/Desktop/Cours/2eme année/Modélisations Mathématiques II/code-corrector/rapport/rapport.tex"
@@ -20,7 +20,27 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count87
+\uc@combtoks=\toks16
+\uc@combtoksb=\toks17
+\uc@temptokena=\toks18
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2015/08/03 3.9m The Babel package
 
 *************************************
@@ -32,46 +52,31 @@ File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 Language: frenchb 2016/01/01 v3.1k French support from the babel system
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2015/08/03 3.9m Babel common definitions
-\babel@savecnt=\count87
+\babel@savecnt=\count88
 \U@D=\dimen103
 )
 \l@acadian = a dialect from \language\l@french 
 \l@canadien = a dialect from \language\l@french 
 \FBcolonskip=\skip43
 \FBthinskip=\skip44
-\FB@interchartokenstateORI=\count88
+\FB@interchartokenstateORI=\count89
 Package babel Info: Making : an active character on input line 372.
 Package babel Info: Making ; an active character on input line 373.
 Package babel Info: Making ! an active character on input line 374.
 Package babel Info: Making ? an active character on input line 375.
 \FBguillskip=\skip45
-\FBguill@level=\count89
-\FB@everypar=\toks14
+\FBguill@level=\count90
+\FB@everypar=\toks19
 \FB@Mht=\dimen104
-\std@mcc=\count90
-\dec@mcc=\count91
+\std@mcc=\count91
+\dec@mcc=\count92
 \listindentFB=\skip46
 \labelwidthFB=\skip47
 \leftmarginFB=\skip48
 \parindentFFN=\dimen105
 )) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\carlisle\scalefnt.sty") ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\utf8x.def"
-File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
-)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucs.sty"
-Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-global.def"
-File: uni-global.def 2013/05/13 UCS: Unicode global data
-)
-\uc@secondtry=\count92
-\uc@combtoks=\toks18
-\uc@combtoksb=\toks19
-\uc@temptokena=\toks20
+\KV@toks@=\toks20
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip49
@@ -369,99 +374,28 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip54
 )
 \c@@todonotes@numberoftodonotes=\count129
-) (rapport.aux
-! Missing \endcsname inserted.
-<to be read again> 
-                   \unhbox 
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-LaTeX Warning: Label `sub:La r\IeC {\'e}ception et le d\IeC {\'e}codage du message' multiply defined.
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \unhbox 
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \accent@spacefactor 
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Bad space factor (0).
-<to be read again> 
-                   \accent@spacefactor 
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-I allow only values in the range 1..32767 here.
-
-! Extra \endcsname.
-\@namedef ...xpandafter \def \csname #1\endcsname 
-                                                  
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-! Extra }, or forgotten \endgroup.
-\@newl@bel ...ined}}\global \@namedef {#1@#2}{#3}}
-                                                  
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-)
+) (rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Info: Redefining \degres on input line 43.
-LaTeX Info: Redefining \dots on input line 43.
-LaTeX Info: Redefining \up on input line 43.
-
-
-Package frenchb.ldf Warning: OT1 encoding should not be used for French.
-(frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 43.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\ucsencs.def"
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+)
+LaTeX Info: Redefining \degres on input line 44.
+LaTeX Info: Redefining \dots on input line 44.
+LaTeX Info: Redefining \up on input line 44.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count130
 \scratchdimen=\dimen165
@@ -474,16 +408,16 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 \MPnumerator=\count134
 \makeMPintoPDFobject=\count135
 \everyMPtoPDFconversion=\toks41
-) ABD: EveryShipout initializing macros [1
-
-{C:/Users/Brewal/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
+) ABD: EveryShipout initializing macros ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-) <logo.jpg, id=9, 365.11406pt x 204.765pt>
+) <logo.jpg, id=4, 365.11406pt x 204.765pt>
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
-Package pdftex.def Info: logo.jpg used on input line 99.
+Package pdftex.def Info: logo.jpg used on input line 100.
 (pdftex.def)             Requested size: 133.72786pt x 74.99635pt.
- [1 <./logo.jpg>] (rapport.toc)
+ [1
+
+{C:/Users/Brewal/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo.jpg>] (rapport.toc)
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
@@ -491,7 +425,7 @@ Package pdftex.def Info: logo.jpg used on input line 99.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.134 ...ettre comme utilisé dans l'armée \colon
+l.136 ...ettre comme utilisé dans l'armée \colon
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -499,59 +433,41 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.135 
+l.137 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
 
 [2]
 
-LaTeX Warning: Reference `tab:widgets' on page 3 undefined on input line 166.
+LaTeX Warning: Reference `tab:widgets' on page 3 undefined on input line 168.
 
 
-LaTeX Warning: Reference `fig:frog' on page 3 undefined on input line 166.
+LaTeX Warning: Reference `fig:frog' on page 3 undefined on input line 168.
 
-[3] [4] (rapport.aux
-! Missing \endcsname inserted.
-<to be read again> 
-                   \unhbox 
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-\@newl@bel ... \bbl@tempa \csname #1@#2\endcsname 
-                                                  \def \bbl@tempb {#3}\@safe...
-l.21 ...le d\IeC {\'e}codage du message}{{3.2}{3}}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-)
+[3] [4] (rapport.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 14067 strings out of 493634
- 271529 string characters out of 3141311
- 317591 words of memory out of 3000000
- 17200 multiletter control sequences out of 15000+200000
- 10725 words of font info for 38 fonts, out of 3000000 for 9000
+ 14285 strings out of 493634
+ 273222 string characters out of 3141311
+ 317620 words of memory out of 3000000
+ 17402 multiletter control sequences out of 15000+200000
+ 18143 words of font info for 41 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 62i,9n,80p,518b,707s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rapport.pdf (6 pages, 128216 bytes).
+ 62i,9n,80p,518b,713s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on rapport.pdf (5 pages, 164644 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
+ 308 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
