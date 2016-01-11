@@ -32,7 +32,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[12pt]{article}
-\usepackage[english]{babel}
+\usepackage[francais]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -104,8 +104,19 @@ Modélisation Mathémathique % Supervisor's Name
 
 \end{titlepage}
 
+%----------------------------------------------------------------------------------------
+%   TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\newpage
+\tableofcontents
+
+%----------------------------------------------------------------------------------------
+%   CONTENTS
+%----------------------------------------------------------------------------------------
+\newpage
 
 \section{Introduction}
+\label{sec:introduction}
 
 Ce projet à été réalisé dans le cadre de la formation en Modélisation Mathematique, en DUT Informatique à l'IUT de Nantes.
 
@@ -122,14 +133,29 @@ Cette partie couvrira la théorie, les opérations effectués lors de ce projet,
 
 Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer un mot à une lettre comme utilisé dans l'armée \colon
 
-\hspace{1cm} exemple \colon erreur \rightarrow Echo Romeo Romeo Echo Uniforme Romeo
-\\\\
-En informatique on utilise ce qu'on appel des "bits de parité" qui indique indique si le nombre de 1 dans l'octet est pair ou non
+\hspace{1cm} exemple : erreur $\rightarrow$ Echo Romeo Romeo Echo Uniforme Romeo
+\\
+\\En informatique on utilise ce qu'on appel des ``bits de parité" qui indique indique si le nombre de 1 dans l'octet est pair ou non
 
-exemple : A -> 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant "01000001".
-Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié simplement en regardant si le bit de parité correspond toujours au reste du message. Par exemple si l'on reçoit
+\hspace{1cm} exemple : A $\rightarrow$ 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant ``01000001".
+\\Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié simplement en regardant si le bit de parité correspond toujours au reste du message. Par exemple si l'on reçoit
 
 \subsection{Le code de Hamming}
+
+\section{Notre code}
+\label{sec:Notre code}
+
+\subsection{L'envoi du message}
+\label{sub:L'envoi du message}
+
+\subsection{La réception et le décodage du message}
+\label{sub:La réception et le décodage du message}
+
+
+
+\section{Exemple latex}
+\label{sec:Exemple latex}
+
 
 Comments can be added to the margins of the document using the \todo{Here's a comment in the margin!} todo command, as shown in the example on the right. You can also add inline comments too:
 
