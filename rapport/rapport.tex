@@ -111,14 +111,21 @@ Il consiste a concevoir un programme permettant l'encodage d'un message binaire,
 
 
 
-\section{Some \LaTeX{} Examples}
-\label{sec:examples}
+\section{La théorie}
+\label{sec:theorie}
 
-\subsection{Sections}
+Cette partie couvrira la théorie, les opérations effectués lors de ce projet, que ce soit lors de la transmition, ou bien de la récéption, comme du brouillage qui sera effectué pour pouvoir tester les données.
 
-Use section and subsection commands to organize your document. \LaTeX{} handles all the formatting and numbering automatically. Use ref and label commands for cross-references.
+\subsection{La correction d'erreur}
 
-\subsection{Comments}
+Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer un mot à une lettre comme utilisé dans l'armée :
+\\\t exemple : erreur -> Echo Romeo Romeo Echo Uniforme Romeo
+
+En informatique on utilise ce qu'on appel des \"bits de parité" qui indique indique si le nombre de 1 dans l'octet est pair ou non
+  exemple : A -> 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant \"01000001".
+Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié simplement en regardant si le bit de parité correspond toujours au reste du message. Par exemple si l'on reçoit
+
+\subsection{Le code de Hamming}
 
 Comments can be added to the margins of the document using the \todo{Here's a comment in the margin!} todo command, as shown in the example on the right. You can also add inline comments too:
 
