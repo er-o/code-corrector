@@ -17,3 +17,14 @@ Le fichier black.c produit un fichier de données blanc ou noir. On peut regarde
 Le fichier transmit.c contient le bruiteur. On peut observer le travail du bruiteur en faisant par exemple ./black -s 100 | ./transmit -p 0.1 | hexdump.
 
 Makefile contient la description pour make. La commande make produit les exécutables hamming, black et transmit. Avec l'option -h tous ces exécutable montrent leurs paramètres.
+
+Compiler :
+Utiliser le makefile
+et
+gcc -std=c99 -o receiver src/receiver.c squelette_aide/myerror.c &&
+
+
+Exécuter le programme :
+./hamming -i message.txt -o messageHamming.txt ^C &&
+./transmit -i messageHamming.txt -o messageOut.txt ^C &&
+./receiver
