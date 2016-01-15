@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.9)  11 JAN 2016 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.9)  15 JAN 2016 13:11
 entering extended mode
 **"C:/Users/Brewal/Desktop/Cours/2eme année/Modélisations Mathématiques II/code-corrector/rapport/rapport.tex"
 ("C:/Users/Brewal/Desktop/Cours/2eme année/Modélisations Mathématiques II/code-corrector/rapport/rapport.tex"
@@ -422,52 +422,39 @@ Package pdftex.def Info: logo.jpg used on input line 100.
 \openout4 = `rapport.toc'.
 
  [1]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.136 ...ettre comme utilisé dans l'armée \colon
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.137 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--141
+Underfull \hbox (badness 10000) in paragraph at lines 139--142
 
  []
 
-[2]
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 190--198
 
-LaTeX Warning: Reference `tab:widgets' on page 3 undefined on input line 168.
+ []
 
 
-LaTeX Warning: Reference `fig:frog' on page 3 undefined on input line 168.
+LaTeX Warning: Reference `tab:widgets' on page 4 undefined on input line 222.
 
-[3] [4] (rapport.aux)
+
+LaTeX Warning: Reference `fig:frog' on page 4 undefined on input line 222.
+
+[4] [5] (rapport.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 14285 strings out of 493634
- 273222 string characters out of 3141311
- 317620 words of memory out of 3000000
- 17402 multiletter control sequences out of 15000+200000
+ 14292 strings out of 493634
+ 273347 string characters out of 3141311
+ 318650 words of memory out of 3000000
+ 17409 multiletter control sequences out of 15000+200000
  18143 words of font info for 41 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,9n,80p,518b,713s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on rapport.pdf (5 pages, 164644 bytes).
+Output written on rapport.pdf (6 pages, 176641 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
+ 328 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

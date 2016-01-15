@@ -131,18 +131,72 @@ Il consiste a concevoir un programme permettant l'encodage d'un message binaire,
 
 Cette partie couvrira la théorie, les opérations effectués lors de ce projet, que ce soit lors de la transmition, ou bien de la récéption, comme du brouillage qui sera effectué pour pouvoir tester les données.
 
-\subsection{La correction d'erreur}
+\subsection{La détection d'erreur}
+\label{sub:La détection d'erreur}
 
-Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer un mot à une lettre comme utilisé dans l'armée \colon
+Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer un mot à une lettre comme utilisé dans l'armée :
 
 \hspace{1cm} exemple : erreur $\rightarrow$ Echo Romeo Romeo Echo Uniforme Romeo
 \\
-\\ En informatique on utilise ce qu'on appel des ``bits de parité" qui indique indique si le nombre de 1 dans l'octet est pair ou non
+\\ En informatique on utilise ce qu'on appel des ``bits de parité'' qui indique indique si le nombre de 1 dans l'octet est pair ou non
 
-\hspace{1cm} exemple : A $\rightarrow$ 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant ``01000001".
-\\ Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié simplement en regardant si le bit de parité correspond toujours au reste du message.
+\hspace{1cm} exemple : A $\rightarrow$ 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant ``01000001''.
+\\ Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié, simplement en regardant si le bit de parité correspond toujours au reste du message (si le nombre de 1 est toujours pair).
+
+\subsection{La correction d'erreur}
+\label{sub:La correction d'erreur}
+
+Les différents exemple ci-dessus ne permettent que de détecter les erreurs. Mais ce qui nous intéresse vraiment c'est la correction des erreurs.
+\\ Il existe des moyens simple, par exemple la duplication du message :
+
+\hspace{1cm} ``erreur'' $\rightarrow$ eee rrr rrr eee uuu rrr
+\\ On répète chaque lettre 3 fois. Pourquoi 3 fois ? Et pas 2 ?
+\\ Imaginons que l'on multiplie seulement 2 fois, on reçois le message suivant : ``ââgmee'', le message de base peut être ``âge'' mais aussi ``âme''.
+\\ En revanche si l'on multiplie 3 fois on recevra donc un message tel que ``âââgmmeee'', en supposant qu'il n'y ai eu qu'une erreur, le message envoyer est donc ``âme''.
+
+\hspace{1cm} Le problème de ce genre de code de correction c'est qu'ils sont très lourd, et coûteux, on transmet trois fois les données, et lorsque l'on voit le poids des données généralement transmissent (images, musiques, vidéos), on s'en rend vite compte.
 
 \subsection{Le code de Hamming}
+\label{sub:Le code de Hamming}
+
+Le code de Hamming est un code correcteur moderne.
+\\ Généralement on utilise un code de Hamming C(7,4). C'est à dire que l'on envoie 7 bits et que les 4 premiers contiennent les données à transmettre. Les 3 derniers servent à la détection des erreurs.
+\\ Ces 3 derniers bits sont en fait l'addition, bit à bit, des 4 autres. En pratique cela donne ça :
+
+\hspace{1cm} Soit $v_1, v_2, \ldots, v_7$ les bits transmit et $u_1, u_2, u_3$ et $u_4$ les bits contenant le message.
+\begin{align*}
+  v_1 &= u_1,\\
+  v_2 &= u_2,\\
+  v_3 &= u_3,\\
+  v_4 &= u_4,\\
+  v_5 &= u_1 + u_2 + u_4,\\
+  v_6 &= u_1 + u_3 + u_4,\\
+  v_7 &= u_2 + u_3 + u_4,
+\end{align*}
+
+Lorsque l'on reçoit le message (bits $w_1, w_2, \ldots, w_7$), on est face à 8 possibilités :
+
+  (0) il n'y a pas d'erreur; \\
+  (1) $w_1$ est erronée; \\
+  (2) $w_2$ est erronée; \\
+  (3) $w_3$ est erronée; \\
+  (4) $w_4$ est erronée; \\
+  (5) $w_5$ est erronée; \\
+  (6) $w_6$ est erronée; \\
+  (7) $w_7$ est erronée.
+
+Grâce aux 3 derniers bits on peut savoir d'où provient l'erreur. Il suffit de les recalculer (bits $W_5, W_6, W_7$) et de les comparer, pour obtenir un des huit cas précédent :
+
+  (0) si $w_5 = W_5$ et $w_6 = W_6$ et $w_7 = W_7$;\\
+  (1) si $w_5 \ne W_5$ et $w_6 \ne W_6$; \\
+  (2) si $w_5 \ne W_5$ et $w_7 \ne W_7$; \\
+  (3) si $w_6 \ne W_6$ et $w_7 \ne W_7$; \\
+  (4) si $w_5 \ne W_5$ et $w_6 \ne W_6$ et $w_7 \ne W_7$; \\
+  (5) si $w_5 \ne W_5$; \\
+  (6) si $w_6 \ne W_6$; \\
+  (7) si $w_7 \ne W_7$. \\
+
+Cependant ce code ne permet de détecter et corriger qu'une seule erreur.
 
 \section{Notre code}
 \label{sec:Notre code}
