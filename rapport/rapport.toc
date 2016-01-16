@@ -4,12 +4,14 @@
 \contentsline {subsection}{\numberline {2.1}La d\IeC {\'e}tection d'erreur}{2}
 \contentsline {subsection}{\numberline {2.2}La correction d'erreur}{2}
 \contentsline {subsection}{\numberline {2.3}Le code de Hamming}{3}
-\contentsline {section}{\numberline {3}Notre code}{4}
-\contentsline {subsection}{\numberline {3.1}L'envoi du message}{4}
-\contentsline {subsection}{\numberline {3.2}Le brouillage}{5}
-\contentsline {subsection}{\numberline {3.3}La r\IeC {\'e}ception et le d\IeC {\'e}codage du message}{5}
-\contentsline {section}{\numberline {4}d'assault}{5}
-\contentsline {subsection}{\numberline {4.1}Tables and Figures}{5}
-\contentsline {subsection}{\numberline {4.2}Mathematics}{5}
-\contentsline {subsection}{\numberline {4.3}Lists}{6}
-\contentsline {section}{\numberline {A}Annexe 1}{6}
+\contentsline {subsubsection}{\numberline {2.3.1}La distance de Hamming}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Le code de Hamming}{4}
+\contentsline {section}{\numberline {3}Notre code}{6}
+\contentsline {subsection}{\numberline {3.1}L'envoi du message}{6}
+\contentsline {subsection}{\numberline {3.2}Le brouillage}{6}
+\contentsline {subsection}{\numberline {3.3}La r\IeC {\'e}ception et le d\IeC {\'e}codage du message}{7}
+\contentsline {section}{\numberline {4}d'assault}{7}
+\contentsline {subsection}{\numberline {4.1}Tables and Figures}{7}
+\contentsline {subsection}{\numberline {4.2}Mathematics}{7}
+\contentsline {subsection}{\numberline {4.3}Lists}{7}
+\contentsline {section}{\numberline {A}Annexe 1}{8}

@@ -36,6 +36,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{minted}
@@ -114,6 +116,15 @@ Modélisation Mathémathique % Supervisor's Name
 \newpage
 
 %----------------------------------------------------------------------------------------
+%   CONFIGURATION
+%----------------------------------------------------------------------------------------
+
+\definecolor{aogreen}{rgb}{0.0, 0.5, 0.0}
+\newcommand{\tab}{\hspace{1cm}}
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\grn}{\textcolor{aogreen}}
+
+%----------------------------------------------------------------------------------------
 %   INTRODUCTION
 %----------------------------------------------------------------------------------------
 \section{Introduction}
@@ -137,11 +148,11 @@ Cette partie couvrira la théorie, les opérations effectués lors de ce projet,
 
 Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer un mot à une lettre comme utilisé dans l'armée :
 
-\hspace{1cm} exemple : erreur $\rightarrow$ Echo Romeo Romeo Echo Uniforme Romeo
+\tab exemple : erreur $\rightarrow$ Echo Romeo Romeo Echo Uniforme Romeo
 \\
 \\ En informatique on utilise ce qu'on appel des ``bits de parité'' qui indique indique si le nombre de 1 dans l'octet est pair ou non
 
-\hspace{1cm} exemple : A $\rightarrow$ 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant ``01000001''.
+\tab exemple : A $\rightarrow$ 1000001 et ajoutera donc un 0 puisse que il y a deux 1 on obtiendra donc pour A le code suivant ``01000001''.
 \\ Le bits de parité nous permet de savoir si lors de la transmition le message à été modifié, simplement en regardant si le bit de parité correspond toujours au reste du message (si le nombre de 1 est toujours pair).
 
 \subsection{La correction d'erreur}
@@ -150,21 +161,72 @@ Il existe plusieurs méthodes pour détecter les erreurs, par exemple associer u
 Les différents exemple ci-dessus ne permettent que de détecter les erreurs. Mais ce qui nous intéresse vraiment c'est la correction des erreurs.
 \\ Il existe des moyens simple, par exemple la duplication du message :
 
-\hspace{1cm} ``erreur'' $\rightarrow$ eee rrr rrr eee uuu rrr
+\tab ``erreur'' $\rightarrow$ eee rrr rrr eee uuu rrr
 \\ On répète chaque lettre 3 fois. Pourquoi 3 fois ? Et pas 2 ?
 \\ Imaginons que l'on multiplie seulement 2 fois, on reçois le message suivant : ``ââgmee'', le message de base peut être ``âge'' mais aussi ``âme''.
 \\ En revanche si l'on multiplie 3 fois on recevra donc un message tel que ``âââgmmeee'', en supposant qu'il n'y ai eu qu'une erreur, le message envoyer est donc ``âme''.
 
-\hspace{1cm} Le problème de ce genre de code de correction c'est qu'ils sont très lourd, et coûteux, on transmet trois fois les données, et lorsque l'on voit le poids des données généralement transmissent (images, musiques, vidéos), on s'en rend vite compte.
+\tab Le problème de ce genre de code de correction c'est qu'ils sont très lourd, et coûteux, on transmet trois fois les données, et lorsque l'on voit le poids des données généralement transmissent (images, musiques, vidéos), on s'en rend vite compte.
 
 \subsection{Le code de Hamming}
 \label{sub:Le code de Hamming}
 
-Le code de Hamming est un code correcteur moderne.
+Depuis 1946, Richard Hamming travaille sur un système de calculateur peu fiable. En effet les données transmises sont souvent corrompus, et la machine finis invariablement par planté. C’est pour y remédier que Hamming va inventer son code correcteur.
+
+\subsubsection{La distance de Hamming}
+\label{subs:La distance de Hamming}
+
+La distance de Hamming est une notion mathématique, évidemment défini par Hamming, qui permet de quantifier une différence entre deux séquences de symboles.
+\\ Par exemple :
+
+\tab Entre \red{0}001\red{1}1 et \red{1}001\red{0}1 on a 2 bits de différences.
+
+\hspace{2cm} $\rightarrow$ Une distance de Hamming de 2
+\\
+\\ Une distance de Hamming va être applicable sur un alphabet finis, avec une même taille de bit pour tous les mots.
+\\ Par exemple :
+
+\tab 000111 et 0111 ne sont pas comparables.
+\\
+\\ On définit notre alphabet de taille 4, A $=$ $\{$000000; 000111; 111000; 111111$\}$
+\\ La distance de Hamming fais office de code correcteur :
+
+\tab Le mot 0000001 a une distance de 1 avec 000000, de 2 avec 000111, de 4 avec 111000, et de 5 avec 111111.
+\\ Il est donc très probable que le mot reçu 000001 soit en fait le mot transmis 000000.
+\\
+
+\tab Pour utiliser la distance de Hamming, 2 notions sont importantes : la distance minimal et la capacité de correction.
+\\ La distance minimal va être la distance de Hamming entre les mots de l’alphabet, et la capacité de correction va représenter le nombre de bits pouvant être détectés et corrigés.
+\\
+
+\tab Pour illustrer cela reprenons nos exemples précédents :
+\\ \textbf{La duplication du message :}
+\begin{enumerate}
+  \item[] On reprends le cas où l’on triple chaque symbole (a $\rightarrow$ aaa)
+  \item[] Notre alphabet sera A $=$ $\{$aaa; bbb; ccc; $\ldots$; ddd$\}$
+  \item[] On a donc une distance minimal de 6.
+  \item[] Et une capacité de correction de 1 bit : aab est corrigé en aaa.
+\end{enumerate}
+
+\\ \textbf{Le bit de parité :}
+\begin{enumerate}
+  \item[] On a des mots de 3 bits, dont le premier est un bit de parité.
+  \item[] On obtient 4 possibilités : A $=$ $\{$000; 101; 110; 011$\}$
+  \item[] Cette fois la distance minimal est de 2.
+  \item[] Et on a une capacité de détection de 1 bit : 001 est une erreur, cependant il est à 1 de distance entre 000 et 101, donc impossible de corriger.
+\end{enumerate}
+
+\subsubsection{Le code de Hamming}
+\label{subs:Le code de Hamming}
+
+Maintenant nous allons nous pencher sur une utilisation plus complexe et intéressante de la distance de Hamming : le code de Hamming. C’est un code correcteur actuel, dont la distance minimale est égale à trois et la capacité de correction et de 1 bit corrigé.
+
+%%% Si possible expliqué code linéaire et code parfait %%%
+
 \\ Généralement on utilise un code de Hamming C(7,4). C'est à dire que l'on envoie 7 bits et que les 4 premiers contiennent les données à transmettre. Les 3 derniers servent à la détection des erreurs.
 \\ Ces 3 derniers bits sont en fait l'addition, bit à bit, des 4 autres. En pratique cela donne ça :
 
-\hspace{1cm} Soit $v_1, v_2, \ldots, v_7$ les bits transmit et $u_1, u_2, u_3$ et $u_4$ les bits contenant le message.
+\tab Soit $v_1, v_2, \ldots, v_7$ les bits transmit et $u_1, u_2, u_3$ et $u_4$ les bits contenant le message.
 \begin{align*}
   v_1 &= u_1,\\
   v_2 &= u_2,\\
@@ -198,6 +260,60 @@ Grâce aux 3 derniers bits on peut savoir d'où provient l'erreur. Il suffit de 
   (7) si $w_7 \ne W_7$. \\
 
 Cependant ce code ne permet de détecter et corriger qu'une seule erreur.
+
+\\ Matrice génératrice $G_h$ :
+
+\\ \grn{$I_4$}
+\\ bits de parité \red{P}
+
+\begin{align*}
+  G_h =
+  \begin{pmatrix}
+    \grn{1} & \grn{0} & \grn{0} & \grn{0} \\
+    \grn{0} & \grn{1} & \grn{0} & \grn{0} \\
+    \grn{0} & \grn{0} & \grn{1} & \grn{0} \\
+    \grn{0} & \grn{0} & \grn{0} & \grn{1} \\
+    \red{1} & \red{1} & \red{0} & \red{1} \\
+    \red{1} & \red{0} & \red{1} & \red{1} \\
+    \red{0} & \red{1} & \red{1} & \red{1}
+  \end{pmatrix}
+\end{align*}
+
+Matrice H :
+
+\begin{align*}
+  H =
+  \left(
+    \begin{matrix}
+      P^T \\
+      I_{7-4}
+    \end{matrix}
+  \right)
+  =
+  \left(
+    \begin{matrix}
+      1 & 1 & 0 \\
+      1 & 0 & 1 \\
+      0 & 1 & 1 \\
+      1 & 1 & 1 \\
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & 1
+    \end{matrix}
+  \right)
+\end{align*}
+
+Matrice de contrôle $H^T_h$ :
+
+\begin{align*}
+  H^T_h =
+  \begin{pmatrix}
+    1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+    1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 1 & 0 & 0 & 1
+  \end{pmatrix}
+\end{align*}
+
 
 \section{Notre code}
 \label{sec:Notre code}
