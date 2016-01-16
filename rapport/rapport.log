@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.9)  16 JAN 2016 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.9)  16 JAN 2016 22:35
 entering extended mode
 **"C:/Users/Brewal/Desktop/Cours/2eme année/Modélisations Mathématiques II/code-corrector/rapport/rapport.tex"
 ("C:/Users/Brewal/Desktop/Cours/2eme année/Modélisations Mathématiques II/code-corrector/rapport/rapport.tex"
@@ -605,14 +605,40 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.226 \\ G
-          énéralement on utilise un code de Hamming C(7,4). C'est à dire ...
+l.226 \\\tab
+             Généralement on utilise un code de Hamming C(7,4). C'est à d...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 \\\tab
+             Il s'agit en fait d'un code correcteur parfait, c'est à dire q...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 \\ C
+          e qui nous donne l'équation à respecter :
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 253--261
+Underfull \hbox (badness 10000) in paragraph at lines 239--244
 
  []
 
@@ -623,7 +649,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.264 \\ M
+l.267 \\ G
+          râce aux 3 derniers bits on peut savoir d'où provient l'erreur. ...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[5]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 \\ M
           atrice génératrice $G_h$ :
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -636,17 +676,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.266 \\ \grn
+l.284 \\ \grn
              {$I_4$}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[5]
 \openout4 = `rapport.pyg'.
 
 runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -o "_minted-rapport/AFD40319BD07839F295C55AA51146217C37D8F1313295A15D4601630B0F8C0B1.pygtex" "rapport.pyg" )...executed.
-
 
 
 ! Package minted Error: Missing Pygments output; \inputminted was
@@ -658,7 +696,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.351 \end{minted}
+l.369 \end{minted}
                   
 This could be caused by using -output-directory or -aux-directory 
 without setting minted's outputdir, or by using a build tool that 
@@ -679,7 +717,7 @@ See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.354 \mint{c}{printf("Sur une ligne")}
+l.372 \mint{c}{printf("Sur une ligne")}
                                        
 This could be caused by using -output-directory or -aux-directory 
 without setting minted's outputdir, or by using a build tool that 
@@ -688,10 +726,10 @@ kpsewhich option without PowerShell.
 
 [6]
 
-LaTeX Warning: Reference `tab:widgets' on page 7 undefined on input line 380.
+LaTeX Warning: Reference `tab:widgets' on page 7 undefined on input line 398.
 
 
-LaTeX Warning: Reference `fig:frog' on page 7 undefined on input line 380.
+LaTeX Warning: Reference `fig:frog' on page 7 undefined on input line 398.
 
 [7]
 runsystem(del "rapport.pyg")...executed.
@@ -700,20 +738,23 @@ runsystem(del "rapport.pyg")...executed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 17351 strings out of 493634
- 328759 string characters out of 3141311
- 405152 words of memory out of 3000000
- 20372 multiletter control sequences out of 15000+200000
+ 17353 strings out of 493634
+ 328782 string characters out of 3141311
+ 406152 words of memory out of 3000000
+ 20374 multiletter control sequences out of 15000+200000
  19691 words of font info for 48 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  62i,14n,80p,897b,713s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk> <C:\Users\Brewal\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on rapport.pdf (9 pages, 195728 bytes).
+Output written on rapport.pdf (9 pages, 197904 bytes).
 PDF statistics:
- 352 PDF objects out of 1000 (max. 8388607)
+ 353 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

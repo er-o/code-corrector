@@ -223,10 +223,24 @@ Maintenant nous allons nous pencher sur une utilisation plus complexe et intére
 
 %%% Si possible expliqué code linéaire et code parfait %%%
 
-\\ Généralement on utilise un code de Hamming C(7,4). C'est à dire que l'on envoie 7 bits et que les 4 premiers contiennent les données à transmettre. Les 3 derniers servent à la détection des erreurs.
-\\ Ces 3 derniers bits sont en fait l'addition, bit à bit, des 4 autres. En pratique cela donne ça :
+\\\tab Généralement on utilise un code de Hamming C(7,4). C'est à dire que l'on envoie 7 bits et que les 4 premiers contiennent les données à transmettre. Les 3 derniers servent à la détection des erreurs.
 
-\tab Soit $v_1, v_2, \ldots, v_7$ les bits transmit et $u_1, u_2, u_3$ et $u_4$ les bits contenant le message.
+\\\tab Il s'agit en fait d'un code correcteur parfait, c'est à dire qu'il corrige un bit avec le moins d'information possible (ici 3 bits). On peut le vérifier simplement, attention cependant on par du principe qu'il ne peut y avoir au plus qu'un bit erroné :
+\begin{enumerate}
+  \item[-] On a 5 états possibles : 4 états d'erreurs + 1 état sans erreur
+  \item[-] On va ajouter p bits de correction, ce qui nous rajoute p états d'erreurs
+  \item[-] Or p bits peuvent contenir $2^p$ informations
+\end{enumerate}
+\\ Ce qui nous donne l'équation à respecter :
+\begin{enumerate}
+  \item[$\rightarrow$] $ 5 + p = 2^p$
+  \item[$\rightarrow$] Or $ 5 + 3 = 2^3$
+\end{enumerate}
+Ainsi C(7,4) utilise le nombre minimal de bits pour transmettre l'information tout en corrigeant une erreur.
+\\
+\\ Maintenant voyons comment contenir la correction dans 3 bits !
+\\ Ces 3 derniers bits sont en fait l'addition, bit à bit, des 4 autres. En pratique cela donne ça :
+\\ Soit $v_1, v_2, \ldots, v_7$ les bits transmit et $u_1, u_2, u_3$ et $u_4$ les bits contenant le message.
 \begin{align*}
   v_1 &= u_1,\\
   v_2 &= u_2,\\
@@ -239,25 +253,29 @@ Maintenant nous allons nous pencher sur une utilisation plus complexe et intére
 
 Lorsque l'on reçoit le message (bits $w_1, w_2, \ldots, w_7$), on est face à 8 possibilités :
 
-  (0) il n'y a pas d'erreur; \\
-  (1) $w_1$ est erronée; \\
-  (2) $w_2$ est erronée; \\
-  (3) $w_3$ est erronée; \\
-  (4) $w_4$ est erronée; \\
-  (5) $w_5$ est erronée; \\
-  (6) $w_6$ est erronée; \\
-  (7) $w_7$ est erronée.
+\begin{enumerate}
+  \item[(0)] il n'y a pas d'erreur;
+  \item[(1)] $w_1$ est erronée;
+  \item[(2)] $w_2$ est erronée;
+  \item[(3)] $w_3$ est erronée;
+  \item[(4)] $w_4$ est erronée;
+  \item[(5)] $w_5$ est erronée;
+  \item[(6)] $w_6$ est erronée;
+  \item[(7)] $w_7$ est erronée.
+\end{enumerate}
 
-Grâce aux 3 derniers bits on peut savoir d'où provient l'erreur. Il suffit de les recalculer (bits $W_5, W_6, W_7$) et de les comparer, pour obtenir un des huit cas précédent :
+\\ Grâce aux 3 derniers bits on peut savoir d'où provient l'erreur. Il suffit de les recalculer (bits $W_5, W_6, W_7$) et de les comparer, pour obtenir un des huit cas précédent :
 
-  (0) si $w_5 = W_5$ et $w_6 = W_6$ et $w_7 = W_7$;\\
-  (1) si $w_5 \ne W_5$ et $w_6 \ne W_6$; \\
-  (2) si $w_5 \ne W_5$ et $w_7 \ne W_7$; \\
-  (3) si $w_6 \ne W_6$ et $w_7 \ne W_7$; \\
-  (4) si $w_5 \ne W_5$ et $w_6 \ne W_6$ et $w_7 \ne W_7$; \\
-  (5) si $w_5 \ne W_5$; \\
-  (6) si $w_6 \ne W_6$; \\
-  (7) si $w_7 \ne W_7$. \\
+\begin{enumerate}
+  \item[(0)] si $w_5 = W_5$ et $w_6 = W_6$ et $w_7 = W_7$;
+  \item[(1)] si $w_5 \ne W_5$ et $w_6 \ne W_6$;
+  \item[(2)] si $w_5 \ne W_5$ et $w_7 \ne W_7$;
+  \item[(3)] si $w_6 \ne W_6$ et $w_7 \ne W_7$;
+  \item[(4)] si $w_5 \ne W_5$ et $w_6 \ne W_6$ et $w_7 \ne W_7$;
+  \item[(5)] si $w_5 \ne W_5$;
+  \item[(6)] si $w_6 \ne W_6$;
+  \item[(7)] si $w_7 \ne W_7$.
+\end{enumerate}
 
 Cependant ce code ne permet de détecter et corriger qu'une seule erreur.
 
