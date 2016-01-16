@@ -38,6 +38,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{minted}
 
 \setlength{\parindent}{0cm} % indentation a 0 de base
 
@@ -204,13 +205,53 @@ Cependant ce code ne permet de détecter et corriger qu'une seule erreur.
 \subsection{L'envoi du message}
 \label{sub:L'envoi du message}
 
+Test de code :
+
+\begin{minted}{c}
+int GMatrix[4][8] = {{1,1,0,1,1,0,0,0},
+                     {0,1,1,1,0,1,0,0},
+                     {1,0,1,1,0,0,1,0},
+                     {1,1,1,0,0,0,0,1}} ;
+char G[4] ;
+void init_generators() {
+ for (int i=0; i < 4; ++i) {
+   G[i] = 0 ;
+   for (int j=0; j < 8; ++j)
+     if (GMatrix[i][j]) G[i] |= (1 << (7-j)) ;
+ }
+}
+
+ void hamming(char c, char out[2]) {
+   out[0] = out[1] = 0;
+   for (int i=0; i < 4; ++i) {
+     if (c & (1 << i))
+       out[1] ^= G[i] ;
+     if (c & (1 << (i+4)))
+       out[0] ^= G[i] ;
+   }
+ }
+
+
+\end{minted}
+
+
+
+\subsection{Le brouillage}
+\label{sub:brouillage}
+
+Afin de pouvoir tester notre code dans des conditions d'erreurs réelles, nous utilisons un programme permettant de brouiller certains bits, aléatoirements. Ce brouillage nous permet de tester notre code décodeur, étant donné que la probabilité d'un brouillage dû au code d'encodage est extremement faible.
+
+Pour se faire, nous utilisons le code transmit.c, qui simule une transmition de message (comme par example l'envois d'un message à un satelite en orbite, ce qui peut engendrer de nombreuses erreurs).
+
+
+
 \subsection{La réception et le décodage du message}
 \label{sub:La réception et le décodage du message}
 
 
 
-\section{Exemple latex}
-\label{sec:Exemple latex}
+\section{d'assault}
+\label{sec:assault}
 
 
 Comments can be added to the margins of the document using the \todo{Here's a comment in the margin!} todo command, as shown in the example on the right. You can also add inline comments too:

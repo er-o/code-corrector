@@ -6,9 +6,10 @@
 \contentsline {subsection}{\numberline {2.3}Le code de Hamming}{3}
 \contentsline {section}{\numberline {3}Notre code}{4}
 \contentsline {subsection}{\numberline {3.1}L'envoi du message}{4}
-\contentsline {subsection}{\numberline {3.2}La r\IeC {\'e}ception et le d\IeC {\'e}codage du message}{4}
-\contentsline {section}{\numberline {4}Exemple latex}{4}
-\contentsline {subsection}{\numberline {4.1}Tables and Figures}{4}
+\contentsline {subsection}{\numberline {3.2}Le brouillage}{5}
+\contentsline {subsection}{\numberline {3.3}La r\IeC {\'e}ception et le d\IeC {\'e}codage du message}{5}
+\contentsline {section}{\numberline {4}d'assault}{5}
+\contentsline {subsection}{\numberline {4.1}Tables and Figures}{5}
 \contentsline {subsection}{\numberline {4.2}Mathematics}{5}
-\contentsline {subsection}{\numberline {4.3}Lists}{5}
-\contentsline {section}{\numberline {A}Annexe 1}{5}
+\contentsline {subsection}{\numberline {4.3}Lists}{6}
+\contentsline {section}{\numberline {A}Annexe 1}{6}
