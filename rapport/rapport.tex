@@ -225,7 +225,7 @@ Ainsi C(7,4) utilise le nombre minimal de bits pour transmettre l'information to
 \end{align*}
 \linebreak
 \\
-\includegraphics[width=9cm]{cercles.PNG}
+\includegraphics[width=7cm]{cercles.PNG}
 
 
 Lorsque l'on reçoit le message (bits $w_1, w_2, \ldots, w_7$), on est face à 8 possibilités :
@@ -438,7 +438,7 @@ Pour se faire, nous utilisons le code transmit.c, qui simule une transmition de 
 \textbf{void syndrom}
 \\
 %linenos, frame=single
-\begin{minted}[]{c}
+\begin{minted}[linenos, frame=single]{c}
   void syndrom(){
     int leader[7][7] = {
     {0,0,0,0,0,0,1},
@@ -452,14 +452,11 @@ Pour se faire, nous utilisons le code transmit.c, qui simule une transmition de 
     int tmp[3] = {0,0,0};
     int index;
     for(int k = 0; k < 7; k++){
-    //  printf("===============\n");
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 7; j++){
           tmp[i] ^= leader[k][j] & GMatrixControl[j][i];
-          //printf("tmp[%d]: %d, leader : %d, GMatrixControl : %d\n", i, tmp[i], leader[k][j], GMatrixControl[j][i]);
         }
       }
-        //printf("Syndrome n°%d : [%d, %d, %d]\n", k, tmp[0], tmp[1], tmp[2]);
       index = tmp[0] + 2*tmp[1] + 4*tmp[2];
       for (int i = 0; i < 3; i++) {
         tmp[i] = 0;
@@ -480,7 +477,7 @@ Une fois le syndrome obtenu, on calcul sa somme qui fera office d’indice pour 
 \\\textbf{int hamming}
 \\
 %linenos, frame=single
-\begin{minted}[]{c}
+\begin{minted}[linenos, frame=single]{c}
   int hamming(char msgEncode[8]) {
     int octetErrone = 0;
     int syndrome[3] = {0,0,0};
@@ -489,8 +486,7 @@ Une fois le syndrome obtenu, on calcul sa somme qui fera office d’indice pour 
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 7; j++){
         syndrome[i] ^= msgEncode[j] & GMatrixControl[j][i];
-        //printf("tmp[%d]: %d, leader : %d, GMatrixControl : %d\n", i, tmp[i], leader[k][j], GMatrixControl[j][i]);
-      }
+        }
     }
     index = syndrome[0] + 2*syndrome[1] + 4*syndrome[2];
 
@@ -503,16 +499,17 @@ Une fois le syndrome obtenu, on calcul sa somme qui fera office d’indice pour 
     //Si pas un index nulle
     if (index == 0) {
       if(msgEncode[7] == parite) {
-        //printf("Le message est intacte\n");
       } else {
-        printf("L'index est a 0, alors que le bit de parité n'est pas respecté. (on le corrige)\n");
+        printf("L'index est a 0, alors que le bit de parité
+                    n'est pas respecté. (on le corrige)\n");
         msgEncode[7] ^= 1;
-        printf("/////////////////////////////////////////////////////////////////////////");
+        printf("====================");
       }
     //Sinon on répare l'erreur
     } else {
       if(msgEncode[7] != parite) {
-        printf("Le message a un bit mal transmis, il est corrigé\n");
+        printf("Le message a un bit mal transmis,
+                                il est corrigé\n");
 
         printf("bits recu :  ");
         for (int i = 0; i < 8; i++) {
@@ -525,7 +522,8 @@ Une fois le syndrome obtenu, on calcul sa somme qui fera office d’indice pour 
 
 
       } else {
-        printf("Problème : Le message contient trop d'erreurs\n");
+        printf("Problème : Le message contient trop
+                                      d'erreurs\n");
         octetErrone = 1;
       }
     }
@@ -534,11 +532,23 @@ Une fois le syndrome obtenu, on calcul sa somme qui fera office d’indice pour 
 
 
 \end{minted}
- 
+
 Cette méthode va permettre de vérifier les erreurs et les corriger si possible. Pour cela on va d’abords regarder les 2 informations nécessaire : le syndrome et le bit de parité.\\
 Comme vu précédemment, on ne touche à rien si le message est correcte, o le corrige si le syndrome est non nul ou le bit de parité faux, et on n’indique que le message n’est pas corrigeable si le syndrome est non nul et le bit de parité bon.\\
 
 Ensuite il suffit d’utiliser cette méthode en boucle, puis de récupérer les 4 bits d'informations pour décoder un message.\\
+
+
+\section{Conclusion}
+\label{sec:conclu}
+Les codes correcteurs d'erreurs sont utilisés dans presque toutes les transmission de données. Car dans la grande majorité des cas,, le canal de communication, n'est pas entièrement fiable. Autrement dit, les données, sont susceptibles d'être altérées.\\
+Deux solutions sont envisageables : augmenter la puissance de la transmission (possible sur une transmission radio), ou augmenter la redondance. Évidemment la deux solution est la seule utilisable dans tous les cas.\\
+Et là les solutions proposés sont nombreses, allant du code des aviateurs qui diront « Alpha Tango Charlie » au lieu de « ATC » au code de Reed-Solomon pour les CD. Et il n’y a pas une solution meilleure, seulement des solutions plus adaptés. Il serait impossble pour des aviateurs de parler en utilisant Hamming, et ridiculement gourmand pour un CD de tripler chaque bit transmis.\\
+Et comme les contraintes, les supports, les moyens de communications évoluent il est toujours d’actualité de chercher de nouveaux codes correcteurs.\\
+
+
+
+
 
 
 

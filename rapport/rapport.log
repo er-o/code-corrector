@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.12.9)  17 JAN 2016 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.12.9)  17 JAN 2016 23:32
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -603,7 +603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--217
 File: cercles.PNG Graphic file (type png)
  <use cercles.PNG>
 Package pdftex.def Info: cercles.PNG used on input line 228.
-(pdftex.def)             Requested size: 256.0748pt x 237.95793pt.
+(pdftex.def)             Requested size: 199.16928pt x 185.069pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 225--229
 
@@ -614,7 +614,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--229
 
  []
 
-[5] [6 <./cercles.PNG>]
+[5 <./cercles.PNG>]
 Underfull \hbox (badness 10000) in paragraph at lines 257--262
 
  []
@@ -634,7 +634,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--280
 
  []
 
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 329--336
 
  []
@@ -646,30 +646,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 329--336
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 329--336
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--357
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--357
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 345--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--357
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 363--367
 
  []
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 372--380
 
  []
 
-[9]
+[8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 405--406
 
  []
@@ -687,7 +687,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 409--413
 [10]
 \openout4 = `rapport.pyg'.
 
- (./_minted-rapport/E15F8BB6CB13D6C169756527B424D2C99EE6FD1E1193942FBDE49090BBA94C21.pygtex
+ (./_minted-rapport/21508D886416F9FAB7FC0D03F0BE2EDD9EE6FD1E1193942FBDE49090BBA94C21.pygtex
 Underfull \hbox (badness 10000) in paragraph at lines 438--1
 
  []
@@ -697,25 +697,28 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
 [11])
 \openout4 = `rapport.pyg'.
 
-runsystem(pygmentize -l c -f latex -F tokenmerge -P style=default -P commandprefix=PYGdefault -o "_minted-rapport/94688E520C16B2CD77FD973ED993CCD19EE6FD1E1193942FBDE49090BBA94C21.pygtex" "rapport.pyg" )...executed.
-
- (./_minted-rapport/94688E520C16B2CD77FD973ED993CCD19EE6FD1E1193942FBDE49090BBA94C21.pygtex
-Underfull \hbox (badness 10000) in paragraph at lines 477--1
+ (./_minted-rapport/A7D23E08078BF51FBE1E5A5F6C6C15BC9EE6FD1E1193942FBDE49090BBA94C21.pygtex
+Underfull \hbox (badness 10000) in paragraph at lines 474--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--1
+Underfull \hbox (badness 10000) in paragraph at lines 474--1
 
  []
 
 [12])
-Underfull \hbox (badness 10000) in paragraph at lines 538--540
+Underfull \hbox (badness 10000) in paragraph at lines 536--538
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 541--542
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--548
 
  []
 
@@ -723,16 +726,16 @@ runsystem(rm "rapport.pyg")...executed.
 
 [14] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 17152 strings out of 493089
- 319179 string characters out of 6140694
- 402404 words of memory out of 5000000
- 20257 multiletter control sequences out of 15000+600000
- 18476 words of font info for 47 fonts, out of 8000000 for 9000
+ 17156 strings out of 493089
+ 319240 string characters out of 6140694
+ 401413 words of memory out of 5000000
+ 20260 multiletter control sequences out of 15000+600000
+ 19242 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,56p,797b,601s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/share/texm
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texm
 f-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on rapport.pdf (15 pages, 339213 bytes).
+Output written on rapport.pdf (15 pages, 351333 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream
