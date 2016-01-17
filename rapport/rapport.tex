@@ -363,6 +363,7 @@ Il s’agit maintenant de pouvoir détecter et corriger les erreurs, pour cela o
 \\
 Notre matrice de contrôle :\\
 \begin{align}
+  H =
   \left(
   \begin{matrix}
     1 & 1 & 0 & 1 & 1 & 0 & 0 \\
@@ -387,7 +388,7 @@ Or on a :\\
   \item[-] C . H = S
   \item[-] Z . H = (M + C) . H = M . H + C . H = 0 + C . H = S
 \end{enumerate}
-\newpage
+
 On obtient donc le même syndrome pour le message reçu et son message correcteur, ce qui va nous permettre dans la pratique de créer un index où l’on va retenir le message correcteur associer à chaque syndrome.
 Avec un Hamming (7,4), on a un syndrome de 3 bits, donc un index de taille 8. Sachant que le syndrome 0 sera toujours associer à un message correct, donc un message correcteur    Z $=$ $\{0,0,0,0,0,0,0\}$. \\
 \\
