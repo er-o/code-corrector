@@ -293,12 +293,12 @@ Notre matrice génératrice :\\
   \left(
     \begin{matrix}
       \textcolor{green}{1} & \textcolor{green}{0} & \textcolor{green}{0} & \textcolor{green}{0} \\
-      0 & 1 & 0 & 0 \\
-      0 & 0 & 1 & 0 \\
-      0 & 0 & 0 & 1 \\
-      1 & 1 & 0 & 1 \\
-      1 & 0 & 1 & 1 \\
-      0 & 1 & 1 & 1
+      \textcolor{green}{0} & \textcolor{green}{1} & \textcolor{green}{0} & \textcolor{green}{0} \\
+      \textcolor{green}{0} & \textcolor{green}{0} & \textcolor{green}{1} & \textcolor{green}{0} \\
+      \textcolor{green}{0} & \textcolor{green}{0} & \textcolor{green}{0} & \textcolor{green}{1} \\
+      \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} \\
+      \textcolor{red}{1} & \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} \\
+      \textcolor{red}{0} & \textcolor{red}{1} & \textcolor{red}{1} & \textcolor{red}{1}
     \end{matrix}
   \right)
 \end{align*}
@@ -363,11 +363,13 @@ Il s’agit maintenant de pouvoir détecter et corriger les erreurs, pour cela o
 \\
 Notre matrice de contrôle :\\
 \begin{align}
+  \left(
   \begin{matrix}
     1 & 1 & 0 & 1 & 1 & 0 & 0 \\
     1 & 0 & 1 & 1 & 0 & 1 & 0 \\
     0 & 1 & 1 & 1 & 0 & 0 & 1
   \end{matrix}
+  \right)
 \end{align}
 Notre matrice de contrôle doit répondre à la propriété suivante :\\
 \tab M est un mot de l’alphabet si, et uniquement si H . C = 0
