@@ -6,12 +6,12 @@
 \contentsline {subsection}{\numberline {2.3}Le code de Hamming}{3}
 \contentsline {subsubsection}{\numberline {2.3.1}La distance de Hamming}{3}
 \contentsline {subsubsection}{\numberline {2.3.2}Le code de Hamming}{4}
-\contentsline {section}{\numberline {3}Notre code}{9}
-\contentsline {subsection}{\numberline {3.1}L'envoi du message}{9}
-\contentsline {subsection}{\numberline {3.2}Le brouillage}{9}
-\contentsline {subsection}{\numberline {3.3}La r\IeC {\'e}ception et le d\IeC {\'e}codage du message}{10}
-\contentsline {section}{\numberline {4}d'assault}{10}
-\contentsline {subsection}{\numberline {4.1}Tables and Figures}{10}
-\contentsline {subsection}{\numberline {4.2}Mathematics}{10}
-\contentsline {subsection}{\numberline {4.3}Lists}{10}
-\contentsline {section}{\numberline {A}Annexe 1}{11}
+\contentsline {section}{\numberline {3}Notre code}{10}
+\contentsline {subsection}{\numberline {3.1}L'envoi du message}{10}
+\contentsline {subsection}{\numberline {3.2}Le brouillage}{10}
+\contentsline {subsection}{\numberline {3.3}La r\IeC {\'e}ception et le d\IeC {\'e}codage du message}{11}
+\contentsline {section}{\numberline {4}d'assault}{11}
+\contentsline {subsection}{\numberline {4.1}Tables and Figures}{11}
+\contentsline {subsection}{\numberline {4.2}Mathematics}{11}
+\contentsline {subsection}{\numberline {4.3}Lists}{11}
+\contentsline {section}{\numberline {A}Annexe 1}{12}

@@ -287,6 +287,22 @@ Cependant ce code ne permet de détecter et corriger qu'une seule erreur. Nous a
 \\
 \\ \textbf{Matrice génératrice $G_h$ :}
 \\
+Notre matrice génératrice :\\
+\begin{align*}
+  G_h =
+  \left(
+    \begin{matrix}
+      \textcolor{green}{1} & \textcolor{green}{0} & \textcolor{green}{0} & \textcolor{green}{0} \\
+      0 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1 \\
+      1 & 1 & 0 & 1 \\
+      1 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 1
+    \end{matrix}
+  \right)
+\end{align*}
+
 La matrice génératrice reflète ce qui est dit plus haut : en vert on a les 4 bits du message, puis les 3 bits de corrections en rouge. L'intérêt d’une telle matrice est de pouvoir être utilisé facilement par un programme, en effet une simple multiplication matricielle suffit pour encoder le message.
 Ainsi pour coder mon message M $=$ $\{1011\}$, je fais M.Gh $=$ $\{1011010\}$ $=$ C
 \\ \\
@@ -345,6 +361,14 @@ Il s’agit maintenant de pouvoir détecter et corriger les erreurs, pour cela o
 \\
 \\ \textbf{Matrice de contrôle :}
 \\
+Notre matrice de contrôle :\\
+\begin{align}
+  \begin{matrix}
+    1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+    1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 1 & 0 & 0 & 1
+  \end{matrix}
+\end{align}
 Notre matrice de contrôle doit répondre à la propriété suivante :\\
 \tab M est un mot de l’alphabet si, et uniquement si H . C = 0
 \\Donc on peux déjà vérifier si le message encodé est valide ou non. On va appeler \textbf{syndrome} le résultat de la multiplication matricielle entre le message reçu et la matrice de contrôle. Si le syndrome est non nul, alors on a une erreur de transmission.
