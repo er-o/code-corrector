@@ -200,7 +200,8 @@ La distance de Hamming est une notion mathématique, évidemment défini par Ham
 \\
 
 \tab Pour illustrer cela reprenons nos exemples précédents :
-\\ \textbf{La duplication du message :}
+\\
+\textbf{La duplication du message :}
 \begin{enumerate}
   \item[] On reprends le cas où l’on triple chaque symbole (a $\rightarrow$ aaa)
   \item[] Notre alphabet sera A $=$ $\{$aaa; bbb; ccc; $\ldots$; ddd$\}$
@@ -208,7 +209,8 @@ La distance de Hamming est une notion mathématique, évidemment défini par Ham
   \item[] Et une capacité de correction de 1 bit : aab est corrigé en aaa.
 \end{enumerate}
 
-\\ \textbf{Le bit de parité :}
+\linebreak
+\textbf{Le bit de parité :}
 \begin{enumerate}
   \item[] On a des mots de 3 bits, dont le premier est un bit de parité.
   \item[] On obtient 4 possibilités : A $=$ $\{$000; 101; 110; 011$\}$
@@ -250,6 +252,10 @@ Ainsi C(7,4) utilise le nombre minimal de bits pour transmettre l'information to
   v_6 &= u_1 + u_3 + u_4,\\
   v_7 &= u_2 + u_3 + u_4,
 \end{align*}
+\linebreak
+\\
+\includegraphics[width=9cm]{cercles.PNG}
+
 
 Lorsque l'on reçoit le message (bits $w_1, w_2, \ldots, w_7$), on est face à 8 possibilités :
 
@@ -277,61 +283,109 @@ Lorsque l'on reçoit le message (bits $w_1, w_2, \ldots, w_7$), on est face à 8
   \item[(7)] si $w_7 \ne W_7$.
 \end{enumerate}
 
-Cependant ce code ne permet de détecter et corriger qu'une seule erreur.
-
-\\ Matrice génératrice $G_h$ :
-
-\\ \grn{$I_4$}
-\\ bits de parité \red{P}
-
-\begin{align*}
-  G_h =
-  \begin{pmatrix}
-    \grn{1} & \grn{0} & \grn{0} & \grn{0} \\
-    \grn{0} & \grn{1} & \grn{0} & \grn{0} \\
-    \grn{0} & \grn{0} & \grn{1} & \grn{0} \\
-    \grn{0} & \grn{0} & \grn{0} & \grn{1} \\
-    \red{1} & \red{1} & \red{0} & \red{1} \\
-    \red{1} & \red{0} & \red{1} & \red{1} \\
-    \red{0} & \red{1} & \red{1} & \red{1}
-  \end{pmatrix}
-\end{align*}
-
-Matrice H :
+Cependant ce code ne permet de détecter et corriger qu'une seule erreur. Nous allons le voir au niveau des matrices :
+\\
+\\ \textbf{Matrice génératrice $G_h$ :}
+\\
+La matrice génératrice reflète ce qui est dit plus haut : en vert on a les 4 bits du message, puis les 3 bits de corrections en rouge. L'intérêt d’une telle matrice est de pouvoir être utilisé facilement par un programme, en effet une simple multiplication matricielle suffit pour encoder le message.
+Ainsi pour coder mon message M $=$ $\{1011\}$, je fais M.Gh $=$ $\{1011010\}$ $=$ C
+\\ \\
 
 \begin{align*}
-  H =
+  M =
   \left(
     \begin{matrix}
-      P^T \\
-      I_{7-4}
+      1 \\
+      0 \\
+      1 \\
+      1 \\
     \end{matrix}
   \right)
-  =
+  \tab
+  M.Gh =
   \left(
     \begin{matrix}
-      1 & 1 & 0 \\
-      1 & 0 & 1 \\
-      0 & 1 & 1 \\
-      1 & 1 & 1 \\
-      1 & 0 & 0 \\
-      0 & 1 & 0 \\
-      0 & 0 & 1
+    1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    1 & 1 & 0 & 1 \\
+    1 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 1
+    \end{matrix}
+  \right)
+  \left(
+    \begin{matrix}
+      1 \\
+      0 \\
+      1 \\
+      1 \\
+    \end{matrix}
+  \right)
+  = C =
+  \left(
+    \begin{matrix}
+      1 \\
+      0 \\
+      1 \\
+      1 \\
+      1 \\
+      0 \\
+      1 \\
+      0 \\
     \end{matrix}
   \right)
 \end{align*}
 
-Matrice de contrôle $H^T_h$ :
-
-\begin{align*}
-  H^T_h =
-  \begin{pmatrix}
-    1 & 1 & 0 & 1 & 1 & 0 & 0 \\
-    1 & 0 & 1 & 1 & 0 & 1 & 0 \\
-    0 & 1 & 1 & 1 & 0 & 0 & 1
-  \end{pmatrix}
-\end{align*}
-
+\\
+Décoder le message est très simple puisque l’on connaît les bits du message, ici les 4 premiers. C $\{1011010\}$ $\rightarrow$ M $\{1011\}$\\
+\\
+Il s’agit maintenant de pouvoir détecter et corriger les erreurs, pour cela on va s’aider d’une matrice de contrôle :
+\\
+\\ \textbf{Matrice de contrôle :}
+\\
+Notre matrice de contrôle doit répondre à la propriété suivante :\\
+\tab M est un mot de l’alphabet si, et uniquement si H . C = 0
+\\Donc on peux déjà vérifier si le message encodé est valide ou non. On va appeler \textbf{syndrome} le résultat de la multiplication matricielle entre le message reçu et la matrice de contrôle. Si le syndrome est non nul, alors on a une erreur de transmission.
+\\
+On appelle S le syndrome calculé avec C le message reçu :\\
+\\
+Si S != 0, C contient un bit erroné. \\
+Le mot correct M cherché diffère de C par un mot Z tel que :\\
+\tab C = M + Z\\
+Il s’agit de trouver ici quel bit est représenter par chaque syndrome S, pour ensuite pour le corrigé avec le message correcteur Z.\\
+Or on a :\\
+\begin{enumerate}
+  \item[-] M  + C = M + M +Z = Z
+  \item[-] C . H = S
+  \item[-] Z . H = (M + C) . H = M . H + C . H = 0 + C . H = S
+\end{enumerate}
+\newpage
+On obtient donc le même syndrome pour le message reçu et son message correcteur, ce qui va nous permettre dans la pratique de créer un index où l’on va retenir le message correcteur associer à chaque syndrome.
+Avec un Hamming (7,4), on a un syndrome de 3 bits, donc un index de taille 8. Sachant que le syndrome 0 sera toujours associer à un message correct, donc un message correcteur    Z $=$ $\{0,0,0,0,0,0,0\}$. \\
+\\
+Pour résumer
+\begin{enumerate}
+  \item[-] si le syndrome est nul, le message est bon.
+  \item[-] si le syndrome est non nul, alors on regarde dans l’index le bit associé à ce syndrome et on le corrige.
+\end{enumerate}
+\\
+\\ \textbf{bit de parité :}
+\\
+Comme vu précédemment on peux ajouter un bit de parité à un correcteur pour détecter des erreurs plus d’erreurs.\\
+Dans notre cas présent on va passer du code de Hamming(7, 4) au code de Hamming (8,4). La distance de Hamming minimal va passer de 3 à 4, et on va pouvoir détecter 2 bits d’erreurs. \\
+En effet dans le cas ou 2 bits sont modifié, on va obtenir un syndrome non nul car le message est erroné, et pourtant le bit de parité sera exact, car c’est un nombre pair d’erreur. Dans ce cas le message devra être renvoyé.\\
+Cependant l’erreur est indétectable avec 3 bits erronés.\\
+\\
+Pour résumer
+\begin{enumerate}
+  \item[-] syndrome nul et bit de parité bon $\rightarrow$ pas d’erreur
+  \item[-] syndrome non nul et bit de parité faux $\rightarrow$  1 erreur corrigeable par le syndrome
+  \item[-] syndrome non nul et bit de parité bon $\rightarrow$ 2 erreurs, retransmission nécessaire
+  \item[-] syndrome nul et bit de parité faux $\rightarrow$ 1 erreur corrigeable par le syndrome
+\end{enumerate}
+\newpage
 
 \section{Notre code}
 \label{sec:Notre code}
