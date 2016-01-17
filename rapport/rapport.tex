@@ -1,32 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% University Assignment Title Page
-% LaTeX Template
-% Version 1.0 (27/12/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Title_Creation)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Instructions for using this template:
-% This title page is capable of being compiled as is. This is not useful for
-% including it in another document. To do this, you have two options:
-%
-% 1) Copy/paste everything between \begin{document} and \end{document}
-% starting at \begin{titlepage} and paste this into another LaTeX file where you
-% want your title page.
-% OR
-% 2) Remove everything outside the \begin{titlepage} and \end{titlepage} and
-% move this file to the same directory as the LaTeX file you wish to add it to.
-% Then add \input{./title_page_1.tex} to your LaTeX file where you want your
-% title page.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\title{Title page with logo}
 %----------------------------------------------------------------------------------------
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
@@ -209,7 +180,7 @@ La distance de Hamming est une notion mathématique, évidemment défini par Ham
   \item[] Et une capacité de correction de 1 bit : aab est corrigé en aaa.
 \end{enumerate}
 
-\linebreak
+
 \textbf{Le bit de parité :}
 \begin{enumerate}
   \item[] On a des mots de 3 bits, dont le premier est un bit de parité.
@@ -221,19 +192,19 @@ La distance de Hamming est une notion mathématique, évidemment défini par Ham
 \subsubsection{Le code de Hamming}
 \label{subs:Le code de Hamming}
 
-Maintenant nous allons nous pencher sur une utilisation plus complexe et intéressante de la distance de Hamming : le code de Hamming. C’est un code correcteur actuel, dont la distance minimale est égale à trois et la capacité de correction et de 1 bit corrigé.
+Maintenant nous allons nous pencher sur une utilisation plus complexe et intéressante de la distance de Hamming : le code de Hamming. C’est un code correcteur actuel, dont la distance minimale est égale à trois et la capacité de correction et de 1 bit corrigé.\\
 
 %%% Si possible expliqué code linéaire et code parfait %%%
 
-\\\tab Généralement on utilise un code de Hamming C(7,4). C'est à dire que l'on envoie 7 bits et que les 4 premiers contiennent les données à transmettre. Les 3 derniers servent à la détection des erreurs.
+\tab Généralement on utilise un code de Hamming C(7,4). C'est à dire que l'on envoie 7 bits et que les 4 premiers contiennent les données à transmettre. Les 3 derniers servent à la détection des erreurs.\\
 
-\\\tab Il s'agit en fait d'un code correcteur parfait, c'est à dire qu'il corrige un bit avec le moins d'information possible (ici 3 bits). On peut le vérifier simplement, attention cependant on par du principe qu'il ne peut y avoir au plus qu'un bit erroné :
+\tab Il s'agit en fait d'un code correcteur parfait, c'est à dire qu'il corrige un bit avec le moins d'information possible (ici 3 bits). On peut le vérifier simplement, attention cependant on par du principe qu'il ne peut y avoir au plus qu'un bit erroné :
 \begin{enumerate}
   \item[-] On a 5 états possibles : 4 états d'erreurs + 1 état sans erreur
   \item[-] On va ajouter p bits de correction, ce qui nous rajoute p états d'erreurs
   \item[-] Or p bits peuvent contenir $2^p$ informations
 \end{enumerate}
-\\ Ce qui nous donne l'équation à respecter :
+Ce qui nous donne l'équation à respecter :
 \begin{enumerate}
   \item[$\rightarrow$] $ 5 + p = 2^p$
   \item[$\rightarrow$] Or $ 5 + 3 = 2^3$
@@ -270,7 +241,7 @@ Lorsque l'on reçoit le message (bits $w_1, w_2, \ldots, w_7$), on est face à 8
   \item[(7)] $w_7$ est erronée.
 \end{enumerate}
 
-\\ Grâce aux 3 derniers bits on peut savoir d'où provient l'erreur. Il suffit de les recalculer (bits $W_5, W_6, W_7$) et de les comparer, pour obtenir un des huit cas précédent :
+Grâce aux 3 derniers bits on peut savoir d'où provient l'erreur. Il suffit de les recalculer (bits $W_5, W_6, W_7$) et de les comparer, pour obtenir un des huit cas précédent :
 
 \begin{enumerate}
   \item[(0)] si $w_5 = W_5$ et $w_6 = W_6$ et $w_7 = W_7$;
@@ -354,7 +325,7 @@ Ainsi pour coder mon message M $=$ $\{1011\}$, je fais M.Gh $=$ $\{1011010\}$ $=
   \right)
 \end{align*}
 
-\\
+
 Décoder le message est très simple puisque l’on connaît les bits du message, ici les 4 premiers. C $\{1011010\}$ $\rightarrow$ M $\{1011\}$\\
 \\
 Il s’agit maintenant de pouvoir détecter et corriger les erreurs, pour cela on va s’aider d’une matrice de contrôle :
@@ -397,8 +368,8 @@ Pour résumer
   \item[-] si le syndrome est nul, le message est bon.
   \item[-] si le syndrome est non nul, alors on regarde dans l’index le bit associé à ce syndrome et on le corrige.
 \end{enumerate}
-\\
-\\ \textbf{bit de parité :}
+
+ \textbf{bit de parité :}
 \\
 Comme vu précédemment on peux ajouter un bit de parité à un correcteur pour détecter des erreurs plus d’erreurs.\\
 Dans notre cas présent on va passer du code de Hamming(7, 4) au code de Hamming (8,4). La distance de Hamming minimal va passer de 3 à 4, et on va pouvoir détecter 2 bits d’erreurs. \\
@@ -417,40 +388,40 @@ Pour résumer
 \section{Notre code}
 \label{sec:Notre code}
 
+Nous avons mis en place un code capable de simuler la transmission d’un message en utilisant un code de Hamming (8,4).
+Pour cela nous utilisons 4 étapes, représenté par 4 fichiers texte :
+
+\begin{enumerate}
+  \item[-] le premier va contenir le message voulant être envoyé
+  \item[-] le second va contenir le message codé avec notre Hamming(8,4)
+  \item[-] le troisième va imiter une transmission avec du bruit en changeant des bits aléatoires
+  \item[-] le dernier va contenir le message décoder et corriger si nécessaire
+\end{enumerate}
+
+
 \subsection{L'envoi du message}
 \label{sub:L'envoi du message}
 
-Test de code :
+Ici on part du fichier avec le message en clair, afin de faire une multiplication matricielle avec la matrice génératrice, et on met le résultat d’en le fichier pour le message encodé.\\
 
-\begin{minted}[linenos, frame=single]{c}
-int GMatrix[4][8] = {{1,1,0,1,1,0,0,0},
-                     {0,1,1,1,0,1,0,0},
-                     {1,0,1,1,0,0,1,0},
-                     {1,1,1,0,0,0,0,1}} ;
-char G[4] ;
-void init_generators() {
- for (int i=0; i < 4; ++i) {
-   G[i] = 0 ;
-   for (int j=0; j < 8; ++j)
-     if (GMatrix[i][j]) G[i] |= (1 << (7-j)) ;
- }
-}
+On peux voir que la matrice est stocké en variable global. On est obligé de se mettre d’accords entre l'émetteur et le receveur sur la matrice utilisé.\\
 
- void hamming(char c, char out[2]) {
-   out[0] = out[1] = 0;
-   for (int i=0; i < 4; ++i) {
-     if (c & (1 << i))
-       out[1] ^= G[i] ;
-     if (c & (1 << (i+4)))
-       out[0] ^= G[i] ;
-   }
- }
+Ensuite la méthode hamming va permettre d’encoder un caractère donné. Ce pendant le code de Hamming(8,4) marche avec 4 bits de données, il faut donc diviser les informations entre out[0] et out[1].\\
+Ensuite on fais un produit matricielle avec la matrice et le message, en utilisant l’opérateur bit à bit \&.\\
+Par exemple : a donne 0110 0001 en ASCII\\
+On va donc encodé 0110, puis 0001, ce qui va nous donner 16 bits au final.\\
+
+\begin{enumerate}
+  \item[-] 0110 $\rightarrow$ \textcolor{red}{110}\textcolor{blue}{0 }\textcolor{green}{0110}
+  \item[-] 0001 $\rightarrow$ \textcolor{red}{110}\textcolor{blue}{1 }\textcolor{green}{1000}
+\end{enumerate}
+\textcolor{green}{En vert} : le message est mis (attention à l’envers)\\
+\textcolor{red}{En rouge} : les bits de correction propre à Hamming(7,4)\\
+\textcolor{blue}{En bleu} : le bit de parité.\\
+Au final le caractère a : en ASCII 0110 0001 $\rightarrow$ 1101 1000 1100 0110
 
 
-\end{minted}
 
-
-\mint{c}{printf("Sur une ligne")}
 
 \subsection{Le brouillage}
 \label{sub:brouillage}
@@ -464,66 +435,111 @@ Pour se faire, nous utilisons le code transmit.c, qui simule une transmition de 
 \subsection{La réception et le décodage du message}
 \label{sub:La réception et le décodage du message}
 
+\textbf{void syndrom}
+\\
+%linenos, frame=single
+\begin{minted}[]{c}
+  void syndrom(){
+    int leader[7][7] = {
+    {0,0,0,0,0,0,1},
+    {0,0,0,0,0,1,0},
+    {0,0,0,0,1,0,0},
+    {0,0,0,1,0,0,0},
+    {0,0,1,0,0,0,0},
+    {0,1,0,0,0,0,0},
+    {1,0,0,0,0,0,0}};
+
+    int tmp[3] = {0,0,0};
+    int index;
+    for(int k = 0; k < 7; k++){
+    //  printf("===============\n");
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 7; j++){
+          tmp[i] ^= leader[k][j] & GMatrixControl[j][i];
+          //printf("tmp[%d]: %d, leader : %d, GMatrixControl : %d\n", i, tmp[i], leader[k][j], GMatrixControl[j][i]);
+        }
+      }
+        //printf("Syndrome n°%d : [%d, %d, %d]\n", k, tmp[0], tmp[1], tmp[2]);
+      index = tmp[0] + 2*tmp[1] + 4*tmp[2];
+      for (int i = 0; i < 3; i++) {
+        tmp[i] = 0;
+      }
+      synd[index] = k+1;
+    }
+
+    printf("index syndromes\n");
+    for(int i = 0; i < 8; i++) {
+      printf ("index : %d    bit erreur : %d\n", i, synd[i]);
+    }
+    printf("\n");
+  }
+\end{minted}
+Comme dit précédemment, le but est ici de se créer un index répertoriant tous les syndrome, avec la solution pour corriger l’erreur, qui sera le tableau \textbf{synd}. Pour cela il va falloir calculer le syndrome avec les 7 possibilités de bits erronés, d’où le tableau \textbf{leader}.\\
+Une fois le syndrome obtenu, on calcul sa somme qui fera office d’indice pour \textbf{synd}, et on y place le numéro du bit concerné.
+\\
+\\\textbf{int hamming}
+\\
+%linenos, frame=single
+\begin{minted}[]{c}
+  int hamming(char msgEncode[8]) {
+    int octetErrone = 0;
+    int syndrome[3] = {0,0,0};
+    int index;
+    //On calcule le syndrome
+    for(int i = 0; i < 3; i++){
+      for(int j = 0; j < 7; j++){
+        syndrome[i] ^= msgEncode[j] & GMatrixControl[j][i];
+        //printf("tmp[%d]: %d, leader : %d, GMatrixControl : %d\n", i, tmp[i], leader[k][j], GMatrixControl[j][i]);
+      }
+    }
+    index = syndrome[0] + 2*syndrome[1] + 4*syndrome[2];
+
+    int parite = 0;
+    //On regarde le bit de parité
+    for (int k = 0; k <= 6; k++) {
+      parite ^= msgEncode[k];
+    }
+
+    //Si pas un index nulle
+    if (index == 0) {
+      if(msgEncode[7] == parite) {
+        //printf("Le message est intacte\n");
+      } else {
+        printf("L'index est a 0, alors que le bit de parité n'est pas respecté. (on le corrige)\n");
+        msgEncode[7] ^= 1;
+        printf("/////////////////////////////////////////////////////////////////////////");
+      }
+    //Sinon on répare l'erreur
+    } else {
+      if(msgEncode[7] != parite) {
+        printf("Le message a un bit mal transmis, il est corrigé\n");
+
+        printf("bits recu :  ");
+        for (int i = 0; i < 8; i++) {
+          printf("%d", bits_recu[i]);
+        }
+        printf("   8-synd[index]  : %d   ", 8-synd[index]);
+
+        msgEncode[7-synd[index]] ^= 1;
 
 
-\section{d'assault}
-\label{sec:assault}
+
+      } else {
+        printf("Problème : Le message contient trop d'erreurs\n");
+        octetErrone = 1;
+      }
+    }
+    return octetErrone;
+  }
 
 
-Comments can be added to the margins of the document using the \todo{Here's a comment in the margin!} todo command, as shown in the example on the right. You can also add inline comments too:
+\end{minted}
+ 
+Cette méthode va permettre de vérifier les erreurs et les corriger si possible. Pour cela on va d’abords regarder les 2 informations nécessaire : le syndrome et le bit de parité.\\
+Comme vu précédemment, on ne touche à rien si le message est correcte, o le corrige si le syndrome est non nul ou le bit de parité faux, et on n’indique que le message n’est pas corrigeable si le syndrome est non nul et le bit de parité bon.\\
 
-\todo[inline, color=green!40]{This is an inline comment.}
+Ensuite il suffit d’utiliser cette méthode en boucle, puis de récupérer les 4 bits d'informations pour décoder un message.\\
 
-\subsection{Tables and Figures}
-
-Use the table and tabular commands for basic tables --- see Table~\ref{tab:widgets}, for example. You can upload a figure (JPEG, PNG or PDF) using the files menu. To include it in your document, use the includegraphics command as in the code for Figure~\ref{fig:frog} below.
-
-% Commands to include a figure:
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.5\textwidth]{frog.jpg}
-%\caption{\label{fig:frog}This is a figure caption.}
-%\end{figure}
-
-%\begin{table}
-%\centering
-%\begin{tabular}{l|r}
-%Item & Quantity \\\hline
-%Widgets & 42 \\
-%Gadgets & 13
-%\end{tabular}
-%\caption{\label{tab:widgets}An example table.}
-%\end{table}
-
-\subsection{Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-$$S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i$$
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-\subsection{Lists}
-
-You can make lists with automatic numbering \dots
-
-\begin{enumerate}
-\item Like this,
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
-
-We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
-
-%----------------------------------------------------------------------------------------
-%   ANNEXES SECTIONS
-%----------------------------------------------------------------------------------------
-\appendix
-\section{Annexe 1}
-\label{sec:Annexe 1}
 
 
 \end{document}
